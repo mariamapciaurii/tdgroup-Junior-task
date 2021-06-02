@@ -1,0 +1,43 @@
+html,body{
+    height: 100%;
+}
+.td-main{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+.td-header{
+    height: 80px;
+    width: 100%;
+    background: green;
+    flex-shrink: 0;
+}
+.td-content{
+    background: yellowgreen;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow: auto;
+    padding: 60px 20px 20px 20px;
+
+}
+.td-footer{
+    height: 40px;
+    width: 100%;
+    background: blue;
+    flex-shrink: 0;
+}
+
+.td-table{
+    width: 100%;
+}
+.td-table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+  }
+ 
