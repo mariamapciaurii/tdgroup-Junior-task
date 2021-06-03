@@ -16,7 +16,6 @@ body {
     position: relative;
 
 }
-
 .td-header {
     height: 72px;
     width: 100%;
@@ -123,13 +122,16 @@ body {
     text-transform: uppercase;
     background: #2962FF;
     color: #fff;
+    height: 50px;
 }
 
 
 .td-table__header th {
+    cursor: pointer;
     text-align: left;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
+    vertical-align: middle;
 }
 
 .td-table__body tr {
@@ -151,6 +153,16 @@ body {
 th,
 td {
     padding: 10px 20px;
+}
+
+.td-popup {
+    visibility: hidden;
+    opacity: 0;
+}
+
+.td-popup--active {
+    visibility: visible;
+    opacity: 1;
 }
 
 .td-popup__content {

@@ -22,6 +22,10 @@ function drawTableHeader() {
         th.innerHTML = item;
         tableHeaderRow.appendChild(th);
 
+        th.onclick = function () {
+          sortBy(item);
+        }
+
     });
 
 }
@@ -89,3 +93,44 @@ function start() {
 
 //START APP
 start();
+
+//SELECT POPUP
+const popup = document.querySelector("#popup");
+
+function showPopup() {
+    popup.classList.add("td-popup--active");
+}
+
+function closePopup() {
+    popup.classList.remove("td-popup--active");
+}
+
+//CREATE NEW ROW
+function addNewRow() {
+
+    let id = tableData[tableData.length - 1].id;
+    let datetime = new Date().toLocaleString();
+    let name = popup.querySelector("#name").value;
+    let sex = popup.querySelector("#sex").value;
+
+    let newRow = {
+        "id": id + 1,
+        "datetime": datetime,
+        "name:": name,
+        "sex": sex
+    }
+
+    tableData.push(newRow);
+
+    closePopup();
+
+    tableBody.innerHTML = "";
+    drawTableBody(tableData);
+
+}
+
+function sortBy(by) {
+    tableData.sort((a, b) => (a.by > b.by) ? 1 : -1)
+    tableBody.innerHTML = "";
+    drawTableBody(tableData);
+}

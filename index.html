@@ -54,7 +54,7 @@
                         <td></td>
                         <td></td>
                         <td></td>
-                        <td><button class="td-table__btn">Add</button></td>
+                        <td><button onclick="showPopup()"    class="td-table__btn">Add</button></td>
                     </tr>
                 </tfoot>
 
@@ -66,10 +66,10 @@
             <div>All right reserved - 2020 </div>
 
         </footer>
-<!-- 
-        <section class="td-popup">
 
-            <div class="td-popup__overlay"></div>
+        <section id="popup" class="td-popup">
+
+            <div class="td-popup__overlay" onclick="closePopup()"></div>
 
             <div class="td-popup__content">
 
@@ -79,18 +79,18 @@
 
                 <div class="td-popup__item">
                     <label class="td-popup__label">Enter Name:</label>
-                    <input class="td-popup__input" type="text" />
+                    <input id="name" class="td-popup__input" type="text" />
                 </div>
                 <div class="td-popup__item">
                     <label class="td-popup__label">Enter Sex:</label>
-                    <input class="td-popup__input" type="text" />
+                    <input id="sex" class="td-popup__input" type="text" />
                 </div>
                 <div class="td-popup__submit">
-                    <button class="btn">ADD ITEM</button>
+                    <button onclick="addNewRow()" class="btn">ADD ITEM</button>
 
             </div>
 
-        </section> -->
+        </section>
 
     </main>
 
