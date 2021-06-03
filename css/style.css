@@ -263,3 +263,13 @@ button{
 button:hover{
     background:#eb7074;
 }
+
+@media all and (max-width: 479px) {
+    tbody,
+    th,
+    td,
+    tr {
+      display: block; 
+      
+    }
+}
