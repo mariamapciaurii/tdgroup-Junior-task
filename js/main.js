@@ -23,7 +23,7 @@ function drawTableHeader() {
         tableHeaderRow.appendChild(th);
 
         th.onclick = function () {
-          sortBy(item);
+            sortBy(item);
         }
 
     });
@@ -107,8 +107,14 @@ function closePopup() {
 
 //CREATE NEW ROW
 function addNewRow() {
+    let id;
+    if (tableData.length > 0) {
+        id = tableData[tableData.length - 1].id;
 
-    let id = tableData[tableData.length - 1].id;
+    } else {
+        id = 0;
+    }
+
     let datetime = new Date().toLocaleString();
     let name = popup.querySelector("#name").value;
     let sex = popup.querySelector("#sex").value;
