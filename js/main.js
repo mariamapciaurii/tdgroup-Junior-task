@@ -1,5 +1,3 @@
-console.log("Data", data);
-
 //GET TABLE
 const table = document.querySelector("#magicTable");
 
@@ -7,9 +5,10 @@ const table = document.querySelector("#magicTable");
 const tableHeader = table.querySelector('thead');
 const tableBody = table.querySelector('tbody');
 
-const tableColumns = data[0].columns;
-const tableData = data[0].data;
+let tableColumns = data[0].columns;
+let tableData = data[0].data;
 
+//DRAW STATIC TABLE HEADER
 function drawTableHeader() {
 
     //Create Table Header Row
@@ -18,24 +17,20 @@ function drawTableHeader() {
     //Run Foreach for 'tableColumns' array
     tableColumns.forEach((item, index) => {
 
+        //Create Table Header Row Cell
         th = document.createElement('th');
         th.innerHTML = item;
         tableHeaderRow.appendChild(th);
-
-        //Create Table Header Row Cell
-        // let tableHeaderCell = tableHeaderRow.insertCell(index);
-
-        // //Add Text To Empty Cell from 'tableColumns' array
-        // tableHeaderCell.innerHTML = item;
 
     });
 
 }
 
-function drawTableBody() {
+//DRAW TABLE BODY BY PASSED DATA
+function drawTableBody(data) {
 
     //Run Foreach for 'tableData' array
-    tableData.forEach((item, index) => { 
+    data.forEach((item, index) => {
 
         //Create Table Header Row
         const tableBodyRow = tableBody.insertRow(index);
@@ -51,9 +46,12 @@ function drawTableBody() {
 
                 let btn = document.createElement("button"); // Create a <button> element
                 btn.innerHTML = "Delete Row"; // Insert text
-                lastCell.appendChild(btn); // Append <button> to <body>
+                lastCell.appendChild(btn); // Append <button> to last sell of row
 
-             
+                btn.onclick = function () {
+                    var id = parseInt(this.parentElement.parentElement.firstChild.innerHTML);
+                    deleteRow(id);
+                }
 
             }
 
@@ -63,35 +61,31 @@ function drawTableBody() {
     });
 
 
-    var buttons = document.querySelectorAll('button');
-
-    buttons.forEach((button , index) => {
-        console.log("Index" , index);
-    })
-  
-
 }
 
-function drawTable() {
+//DELTE ROW BY ID
+function deleteRow(id) {
+
+    //FILTER ARRAY BY ID
+    let filteredTableData = tableData.filter(item => {
+        return item.id != id;
+    });
+
+    //CHANGE DEFAULT DATA TO FILTERED ONE
+    tableData = filteredTableData;
+
+    //REMOVE OLD TABLE BODY
+    tableBody.innerHTML = "";
+
+    //RE-RENDER NEW BODY WITH NEW FITLER DATA
+    drawTableBody(filteredTableData);
+}
+
+//MAIN DRAW TABLE FUNCION
+function start() {
     drawTableHeader();
-    drawTableBody();
+    drawTableBody(tableData);
 }
 
-drawTable();
-
-
-// for(var i = 0; i < table.rows.length; i++) {
-
-//     console.log("Table Row" , table.rows[i]);
-
-//     let deleteButton = table.rows[i].querySelectorAll('button');
-
-//     deleteButton.onclick = function() {
-//         let index = this.rowIndex;
-//         table.deleteRow(index);
-//     }
-
-// }
-
-
-// console.log('Data Body' , tableColumns);
+//START APP
+start();

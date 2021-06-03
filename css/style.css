@@ -12,6 +12,8 @@ body{
     flex-direction: column;
     width: 100%;
     height: 100%;
+    position: relative;
+
 }
 
 .td-header {
@@ -31,7 +33,7 @@ body{
 
 .td-logo {
     cursor: pointer;
-    font-size: 24px;
+    font-size: 22px;
     text-transform: uppercase;
     font-family: 'Roboto Mono', monospace;
     font-weight: bold;
@@ -97,24 +99,81 @@ body{
 
 }
 
+.tb-table__title {
+    font-size: 44px;
+    font-weight: bold;
+    margin-bottom: 34px;
+}
+@media screen and (max-width: 768px) {
+    .tb-table__title {
+      font-size: 20px;
+    }
+  }
+
 .td-table {
-    width: 100%;
+    width: 80%;
+    box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%), 0 3px 14px 2px rgb(0 0 0 / 12%)
 }
 
 .td-table__header {
     text-transform: uppercase;
+    background: #2962FF;
+    color: #fff;
+}
+
+
+.td-table__header th {
+   text-align: left;
+   font-family: 'Roboto Mono', monospace;
+   font-weight: bold;
+}
+
+.td-table__body tr {
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    border-bottom-color: rgba(0,0,0,.12);
+    background: #fff;
+}
+
+.td-table__body tr:last-child {
+   border-bottom: none;
+}
+
+.td-table__body td {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: normal;
+}
+
+th,
+td {
+    padding: 10px 20px;
+}
+
+.td-popup__content   {
+    width: 600px;
+    height: 400px;
+    background: #fff;
+    box-shadow: 0 2px 4px rgb(0 0 0 / 50%);
+
+
+    position: fixed;
+    z-index: 99;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%);
+
 
 }
 
-.td-table,
-th,
-td {
-    border: 1px solid black;
-    border-collapse: collapse;
-}
-
-th,
-td {
-    padding: 15px;
+.td-popup__overlay {
+    display: block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0,0,0,.5);
 }
 

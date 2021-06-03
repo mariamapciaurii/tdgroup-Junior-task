@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&display=swap" rel="stylesheet">
@@ -35,16 +35,28 @@
         </header>
 
         <section class="td-content">
-            <table id="magicTable" class="td-table table table-hover">
-                <thead class="td-table__header thead-dark">
-              
+
+            <h1 class="tb-table__title">Table Of Content</h1>
+
+            <table id="magicTable" class="td-table">
+                <thead class="td-table__header">
+
                 </thead>
 
-                <tbody>
-                
+                <tbody class="td-table__body">
 
-                    
+
                 </tbody>
+
+                <tfoot>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button>Add new</button></td>
+                    </tr>
+                </tfoot>
 
             </table>
         </section>
@@ -52,8 +64,32 @@
         <footer class="td-footer">
             <div>TD Group</div>
             <div>All right reserved - 2020 </div>
-        
+
         </footer>
+
+        <section class="td-popup">
+
+            <div class="td-popup__overlay"></div>
+
+            <div class="td-popup__content">
+
+                <div class="td-popup__title">
+                    Add new item
+                </div>
+
+                <div class="td-popup__item">
+                    <label>Enter Name:</label>
+                    <input type="text" />
+                </div>
+                <div class="td-popup__item">
+                    <label>Enter Sex:</label>
+                    <input type="text" />
+                </div>
+
+            </div>
+
+        </section>
+
     </main>
 
     <script src="./data/data.js"></script>
