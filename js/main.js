@@ -45,7 +45,7 @@ function drawTableBody(data) {
                 let lastCell = tableBodyRow.insertCell(index + 1);
 
                 let btn = document.createElement("button"); // Create a <button> element
-                btn.innerHTML = "Delete Row"; // Insert text
+                btn.innerHTML = "Delete"; // Insert text
                 lastCell.appendChild(btn); // Append <button> to last sell of row
 
                 btn.onclick = function () {
