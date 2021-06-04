@@ -77,7 +77,7 @@ function drawTableBody(data) {
 function deleteRow(id) {
   //FILTER ARRAY BY ID
   let filteredTableData = tableData.filter((item) => {
-    return item.id != id;
+    return item.id !==id;
   });
 
   //CHANGE DEFAULT DATA TO FILTERED ONE
