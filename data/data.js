@@ -1,34 +1,34 @@
 var data = [{
-    "columns": ["id", "datetime", "name", "sex", "action"],
+    "columns": ["id", "datetime", "name", "gender", "action"],
     "data": [{
             "id": 1,
-            "datetime": "6/1/2021, 12:12:00 AM",
+            "datetime": "02/01/2021",
             "name": "სატესტო",
-            "sex": "მამრობითი"
+            "gender": "მამრობითი"
         },
         {
             "id": 2,
-            "datetime": "6/1/2021, 12:13:00 AM",
+            "datetime": "03/01/2021",
             "name": "სატესტო 2",
-            "sex": "მდედრობითი"
+            "gender": "მდედრობითი"
         },
         {
             "id": 3,
-            "datetime": "6/1/2021, 11:00:00 AM",
+            "datetime": "01/03/2021",
             "name": "სატესტო 4",
-            "sex": "მდედრობითი"
+            "gender": "მდედრობითი"
         },
         {
             "id": 4,
-            "datetime": "7/1/2020, 8:00:00 AM",
+            "datetime": "07/02/2020",
             "name": "სატესტო 3",
-            "sex": "მდედრობითი"
+            "gender": "მდედრობითი"
         },
         {
             "id": 5,
-            "datetime": "3/1/2019, 8:00:00 AM",
+            "datetime": "03/01/2019",
             "name": "სატესტო 5",
-            "sex": "მამრობითი"
+            "gender": "მამრობითი"
         }
     ]
 }];

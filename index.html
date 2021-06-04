@@ -14,7 +14,7 @@
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
 
-    <title>TD-task</title>
+    <title>TD-TASK / Main</title>
 </head>
 
 <body>
@@ -26,8 +26,8 @@
             </div>
             <nav class="td-nav">
                 <ul>
-                    <li class="active"><a href="#">Home</a></li>
-                    <li><a href="#">About</a></li>
+                    <li class="active"><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
                     <li><a href="#">Blog</a></li>
                     <li><a href="#">Contact</a></li>
                 </ul>
@@ -38,27 +38,31 @@
 
             <h1 class="tb-table__title">Table Of Content</h1>
 
-            <table id="magicTable" class="td-table">
-                <thead class="td-table__header">
+            <div class="tb-table__wrapper">
+                <table id="magicTable" class="td-table">
+                    <thead class="td-table__header">
 
-                </thead>
+                    </thead>
 
-                <tbody class="td-table__body">
+                    <tbody class="td-table__body">
 
 
-                </tbody>
+                    </tbody>
 
-                <tfoot>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td><button onclick="showPopup()"    class="td-table__btn">Add</button></td>
-                    </tr>
-                </tfoot>
+                    <tfoot class="td-table__footer">
+                        <tr>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td></td>
+                            <td><button onclick="showPopup()" class="td-table__action td-table__action--add">
+                                <img src="./img/add.png"/>
+                            </button></td>
+                        </tr>
+                    </tfoot>
 
-            </table>
+                </table>
+            </div>
         </section>
 
         <footer class="td-footer">
@@ -77,13 +81,16 @@
                     Add new item
                 </div>
 
+                <div class="td-popup__title--error">
+                    Please fill information
+                </div>
+
                 <div class="td-popup__item">
                     <label class="td-popup__label">Enter Name:</label>
                     <input id="name" class="td-popup__input" type="text" />
                 </div>
-                <div class="td-popup__item">
-                    <label class="td-popup__label">Enter Sex:</label>
-                    <input id="sex" class="td-popup__input" type="text" />
+                <div class="td-popup__item td-popup__item--genders">
+                    <label class="td-popup__label" for="gender">Check Gender: </label>
                 </div>
                 <div class="td-popup__submit">
                     <button onclick="addNewRow()" class="btn">ADD ITEM</button>
